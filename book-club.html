@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book Club</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #f5f1ec;
+      --panel: #ffffff;
+      --accent: #4d3023;
+      --text: #1d1b18;
+      --muted: #695c52;
+      --radius: 24px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top left, #fff9f2 0%, #f5f1ec 55%, #e9e1d7 100%); color: var(--text); }
+    .page { max-width: 1080px; margin: 0 auto; padding: 36px 24px; }
+    header { display: flex; justify-content: flex-start; padding-bottom: 16px; }
+    .brand { font-size: 1.5rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+    .intro { display: grid; gap: 28px; padding: 36px 0; }
+    .intro h1 { margin: 0; font-size: clamp(2.6rem, 6vw, 4rem); }
+    .intro p { margin: 0; color: var(--muted); max-width: 680px; line-height: 1.8; }
+    .content-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: start; }
+    .copy-panel { background: var(--panel); border-radius: var(--radius); padding: 32px 34px; box-shadow: 0 24px 48px rgba(0,0,0,.08); }
+    .copy-panel h2 { margin: 0 0 14px; font-size: 1.9rem; }
+    .copy-panel p { margin: 0 0 18px; color: var(--muted); line-height: 1.85; }
+    .copy-panel ul { margin: 0; padding-left: 1.25rem; color: var(--muted); line-height: 1.8; }
+    .aside { display: grid; gap: 24px; }
+    .aside-card { background: rgba(77,48,35,.08); border-radius: var(--radius); padding: 24px; }
+    .aside-card h3 { margin: 0 0 12px; font-size: 1.25rem; }
+    .aside-card p { margin: 0; color: var(--muted); line-height: 1.75; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 30px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    footer { margin-top: 48px; text-align: center; color: #85786f; font-size: 0.95rem; }
+    @media (max-width: 840px) { .content-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 720px) { .page { padding: 24px 18px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Book Club</div>
+    </header>
+    <section class="intro">
+      <h1>A literary evening for curious readers.</h1>
+      <p>Our Book Club meets once each month in a calm setting, designed to welcome meaningful discussion and shared discoveries over coffee and conversation.</p>
+    </section>
+    <div class="content-grid">
+      <div class="copy-panel">
+        <h2>What happens at book club?</h2>
+        <p>We gather around a chosen title, share thoughts, and talk about themes, characters, and moments that stayed with us. Expect a relaxed pace and a friendly, open-minded group.</p>
+        <p>Every meeting includes a short prompt, optional reading rounds, and time to recommend new books for future sessions.</p>
+        <ul>
+          <li>Monthly featured book</li>
+          <li>Warm drinks and conversation</li>
+          <li>Inclusive space for all readers</li>
+        </ul>
+      </div>
+      <aside class="aside">
+        <div class="aside-card">
+          <h3>Next meeting</h3>
+          <p>First Tuesday of the month at 6:30pm. Arrive early to grab a seat and a cup of coffee.</p>
+        </div>
+        <div class="aside-card">
+          <h3>Bring along</h3>
+          <p>Your thoughts, a favourite quote, and a curious mind. No prior preparation is required.</p>
+        </div>
+      </aside>
+    </div>
+    <a class="back-link" href="events.html">← Back to Events</a>
+    <footer>© 2026 Book Club</footer>
+  </div>
+</body>
+</html>

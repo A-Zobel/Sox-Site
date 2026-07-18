@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resources | Blood on the Clocktower</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #080608;
+      --accent: #d25426;
+      --text: #f4f0ec;
+      --muted: #b8b2ab;
+      --radius: 24px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #1f1b1a 0%, #080608 55%, #070504 100%);
+      color: var(--text);
+    }
+    .page { max-width: 960px; margin: 0 auto; padding: 24px 24px 40px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-bottom: 12px; }
+    .brand { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .top-actions a { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+    .top-actions a:hover { background: rgba(210, 84, 38, 0.18); border-color: rgba(210, 84, 38, 0.4); }
+    .hero { padding: 10px 0 20px; }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(2.2rem, 4.6vw, 3rem); line-height: 1.05; }
+    .hero p { margin: 0; color: var(--muted); line-height: 1.8; max-width: 720px; }
+    .resource-section { margin-top: 22px; padding: 22px 0; border-top: 1px solid rgba(255,255,255,0.12); }
+    .resource-section h2 { margin: 0 0 10px; font-size: 1.5rem; }
+    .resource-section p, .resource-section li { color: var(--muted); line-height: 1.8; }
+    .resource-section ul { margin: 10px 0 0 18px; padding: 0; }
+    .resource-section li { margin-bottom: 8px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    footer { margin-top: 40px; color: #756f69; font-size: 0.95rem; }
+    @media (max-width: 720px) { .page { padding: 18px 16px 32px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Blood on the Clocktower</div>
+      <nav class="top-actions" aria-label="Quick links">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1q6TwY8wVYLanuy0iy5Ttclq0bJl85MlLiaXuVjYP9PpJuw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Sign Up</a>
+        <a href="https://docs.google.com/document/d/1Rq1hxXCn9vGvdEp7s3dTYKYys69c1Qtu9QV55FNuE7I/edit?tab=t.0#heading=h.5zbzdagprwgl" target="_blank" rel="noopener noreferrer">Code of Conduct</a>
+        <a href="blood-on-the-clocktower.html">Home</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Resources for players and hosts</h1>
+      <p>Everything you need to feel prepared, comfortable, and ready to jump into the mystery.</p>
+    </section>
+
+    <section class="resource-section">
+      <h2>Feedback</h2>
+      <p>We love hearing what felt fun, confusing, exciting, or worth improving. If you have thoughts after a game, send them along so future sessions can be even better.</p>
+      <ul>
+        <li>Share notes on pacing, intrigue, or any moments that stood out.</li>
+        <li>Tell us what made the night feel welcoming or memorable.</li>
+        <li>For quick feedback, email <a href="mailto:admin@murphyst.com" style="color: #f4f0ec;">admin@murphyst.com</a>.</li>
+      </ul>
+    </section>
+
+    <section class="resource-section">
+      <h2>BOTC Rules</h2>
+      <p>Blood on the Clocktower is built around social deduction, bluffing, and collective storytelling. The core rhythm is simple:</p>
+      <ul>
+        <li>Each player has a secret role with hidden information and special abilities.</li>
+        <li>Daytime is for discussion, accusations, and voting to eliminate suspects.</li>
+        <li>Nighttime is when roles act, secrets deepen, and the story shifts.</li>
+        <li>Good play means balancing truth, deception, and reading the room.</li>
+      </ul>
+    </section>
+
+    <section class="resource-section">
+      <h2>What to Bring</h2>
+      <p>A little preparation helps the night run smoothly.</p>
+      <ul>
+        <li>Arrive a few minutes early so everyone can settle in.</li>
+        <li>Bring a notebook or phone if you want to track clues and notes.</li>
+        <li>Come ready to listen, participate, and enjoy the drama.</li>
+      </ul>
+    </section>
+
+    <section class="resource-section">
+      <h2>Community Etiquette</h2>
+      <p>We want the experience to feel safe, fun, and respectful for everyone involved.</p>
+      <ul>
+        <li>Keep the atmosphere playful and supportive.</li>
+        <li>Respect player boundaries and the pace of the game.</li>
+        <li>Be mindful of spoilers and keep the reveal feeling alive for others.</li>
+      </ul>
+    </section>
+
+    <a class="back-link" href="blood-on-the-clocktower.html">← Back to Event Page</a>
+    <footer>© 2026 Blood on the Clocktower</footer>
+  </div>
+</body>
+</html>

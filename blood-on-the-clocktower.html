@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood on the Clocktower</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #080608;
+      --panel: #121116;
+      --accent: #d25426;
+      --text: #f4f0ec;
+      --muted: #b8b2ab;
+      --radius: 24px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at top, #1f1b1a 0%, #080608 55%, #070504 100%); color: var(--text); }
+    .page { max-width: 1080px; margin: 0 auto; padding: 24px 24px 40px; }
+    .plate { padding: 8px 0 0; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-bottom: 12px; }
+    .brand { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .top-actions a { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+    .top-actions a:hover { background: rgba(210, 84, 38, 0.18); border-color: rgba(210, 84, 38, 0.4); }
+    .hero { padding: 10px 0 18px; }
+    .hero h1 { margin: 0 0 14px; font-size: clamp(2.8rem, 6vw, 4.4rem); letter-spacing: -0.04em; line-height: 1.02; }
+    .hero p { margin: 0; max-width: 700px; color: var(--muted); line-height: 1.9; font-size: 1rem; }
+    .info-grid { display: grid; gap: 20px; margin-top: 20px; }
+    .panel { padding: 0 0 8px; background: none; border: none; border-radius: 0; }
+    .panel h2 { margin: 0 0 16px; font-size: 1.9rem; }
+    .panel p { margin: 0 0 18px; color: var(--muted); line-height: 1.8; }
+    .panel strong { display: block; margin-bottom: 16px; color: var(--accent); font-size: 0.95rem; letter-spacing: 0.12em; text-transform: uppercase; }
+    .feature-list { display: grid; gap: 14px; margin-top: 18px; }
+    .feature-item { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 18px; color: var(--muted); }
+    .feature-item strong { display: block; margin-bottom: 8px; color: #fff; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    footer { margin-top: 56px; text-align: center; color: #756f69; font-size: 0.95rem; }
+    @media (max-width: 720px) { .page { padding: 32px 18px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="plate">
+      <header>
+        <div class="brand">Blood on the Clocktower</div>
+        <nav class="top-actions" aria-label="Quick links">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1q6TwY8wVYLanuy0iy5Ttclq0bJl85MlLiaXuVjYP9PpJuw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Sign Up</a>
+          <a href="https://docs.google.com/document/d/1Rq1hxXCn9vGvdEp7s3dTYKYys69c1Qtu9QV55FNuE7I/edit?tab=t.0#heading=h.5zbzdagprwgl" target="_blank" rel="noopener noreferrer">Code of Conduct</a>
+          <a href="resources.html">Resources</a>
+        </nav>
+      </header>
+      <section class="hero">
+        <h1>A live mystery game night in the heart of the city.</h1>
+        <p>Step into a dramatic interactive experience where strategy, bluffing, and deduction come together under warm lights and shared suspense.</p>
+      </section>
+      <div class="info-grid">
+        <article class="panel">
+          <strong>Last Sunday of the month</strong>
+          <h2>Game format</h2>
+          <p>Blood on the Clocktower is a social deduction event where players take on hidden roles and work to uncover the truth. The energy is intense, imaginative, and always collaborative.</p>
+        </article>
+        <article class="panel">
+          <h2>What to expect</h2>
+          <div class="feature-list">
+            <div class="feature-item"><strong>Roleplay</strong> Each player receives a secret character with special abilities.</div>
+            <div class="feature-item"><strong>Story</strong> A living narrative unfolds as the community votes, debates, and reveals clues. Different scripts can lead to unique stories and priorities</div>
+            <div class="feature-item"><strong>Atmosphere</strong> A dramatic night with twists, turns, and unexpected revelations.</div>
+          </div>
+        </article>
+        <article class="panel">
+          <h2>How to join</h2>
+          <p>Reserve your seat through the form at the top, or email admin@murphyst.com for more information. You can also find us on social media for updates and announcements as Jordan (@harkmatter) and Alex (@alex.zobel.5) </p>
+        </article>
+      </div>
+      <a class="back-link" href="events.html">← Back to Events</a>
+      <footer>© 2026 Blood on the Soxktower</footer>
+    </div>
+  </div>
+</body>
+</html>

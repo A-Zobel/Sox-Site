@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Poetry Night</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #f3ebe3;
+      --panel: #ffffff;
+      --accent: #c15028;
+      --text: #2e2218;
+      --muted: #6f5a4e;
+      --radius: 28px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: linear-gradient(180deg, #f3ebe3 0%, #f9f4ee 100%); color: var(--text); }
+    .page { max-width: 960px; margin: 0 auto; padding: 40px 24px; }
+    header { display: flex; justify-content: flex-start; align-items: center; padding-bottom: 18px; }
+    .brand { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+    .hero { background: var(--panel); border-radius: var(--radius); padding: 56px 44px; box-shadow: 0 32px 64px rgba(0,0,0,.08); margin-bottom: 32px; }
+    .hero .label { display: inline-block; text-transform: uppercase; letter-spacing: 0.24em; color: var(--accent); margin-bottom: 18px; font-size: 0.88rem; }
+    .hero h1 { margin: 0 0 18px; font-size: clamp(2.8rem, 6vw, 4.4rem); line-height: 1.02; }
+    .hero p { margin: 0; max-width: 720px; color: var(--muted); line-height: 1.85; font-size: 1rem; }
+    .event-detail { display: grid; gap: 24px; }
+    .event-panel { background: #ffffff; border-radius: var(--radius); padding: 32px; box-shadow: 0 20px 40px rgba(0,0,0,.05); border: 1px solid rgba(193,80,40,.14); }
+    .event-panel h2 { margin: 0 0 14px; font-size: 1.85rem; }
+    .event-panel strong { display: block; margin-bottom: 16px; color: var(--accent); font-size: 0.98rem; letter-spacing: 0.08em; text-transform: uppercase; }
+    .event-panel p { margin: 0; color: var(--muted); line-height: 1.9; }
+    .event-panel ul { margin: 18px 0 0 1.2rem; padding: 0; color: var(--muted); }
+    .event-panel li { margin-bottom: 10px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 36px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    footer { margin-top: 56px; text-align: center; font-size: 0.95rem; color: #7c6a5e; }
+    @media (max-width: 720px) { .page { padding: 28px 18px; } .hero { padding: 38px 24px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Poetry Night</div>
+    </header>
+    <section class="hero">
+      <span class="label">Live Event</span>
+      <h1>A weekly evening for spoken word and stories.</h1>
+      <p>Enjoy a warm, intimate atmosphere built for poets, readers, and everyone who loves language. Each session highlights local voices, open mic slots, and community conversation.</p>
+    </section>
+    <div class="event-detail">
+      <article class="event-panel">
+        <h2>Event details</h2>
+        <strong>Every second Thursday at 7pm</strong>
+        <p>Bring a poem, bring a friend, or simply take in the performance. The night is relaxed and welcoming, with coffee service and soft seating designed for conversation.</p>
+      </article>
+      <article class="event-panel">
+        <h2>What to expect</h2>
+        <ul>
+          <li>Open mic readings and featured guest performances</li>
+          <li>Prompt-based creative exercises to inspire new work</li>
+          <li>Light snacks and specialty coffee available</li>
+        </ul>
+      </article>
+      <article class="event-panel">
+        <h2>Who can join</h2>
+        <p>This event is open to all experience levels. If you’re curious about performance or just want to enjoy a quiet creative evening, Poetry Night is for you.</p>
+      </article>
+    </div>
+    <a class="back-link" href="events.html">← Back to Events</a>
+    <footer>© 2026 Poetry Night</footer>
+  </div>
+</body>
+</html>

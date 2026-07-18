@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sox Coffee</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #ffffff;
+      --surface: #faf9f7;
+      --accent: #ec793c;
+      --text: #111111;
+      --muted: #666666;
+      --radius: 24px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 20px;
+    }
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      padding: 40px 0 60px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: clamp(2.8rem, 5vw, 4.5rem);
+      line-height: 0.98;
+      margin: 0 0 20px;
+    }
+    .hero p {
+      max-width: 620px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: var(--muted);
+      margin: 0 0 28px;
+    }
+    .hero .buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 28px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .button.primary {
+      background: var(--accent);
+      color: #ffffff;
+    }
+    .button.secondary {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--text);
+    }
+    .hero-visual {
+      position: relative;
+      min-height: 220px;
+      overflow: hidden;
+      background: transparent;
+      box-shadow: none;
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("Logo.png") center/contain no-repeat;
+      opacity: 1;
+      filter: none;
+      z-index: 1;
+    }
+    .hero-visual .overlay {
+      position: absolute;
+      inset: 0;
+      background: transparent;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 28px;
+      color: var(--text);
+      z-index: 2;
+    }
+    .hero-visual .tag {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .hero-visual h2 {
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1.1;
+    }
+    section {
+      padding: 36px 0;
+    }
+    .section-title {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 20px;
+    }
+    .section-title h3 {
+      margin: 0;
+      font-size: 1.55rem;
+    }
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 620px;
+    }
+    .cards {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      margin-top: 30px;
+    }
+    .card {
+      background: #ffffff;
+      border: 1px solid #ece8e1;
+      border-radius: 24px;
+      padding: 26px;
+      min-height: 220px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .card h4 {
+      margin: 0;
+      font-size: 1.2rem;
+    }
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+      flex: 1;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+    .stat {
+      background: #ffffff;
+      border: 1px solid #ece8e1;
+      border-radius: 18px;
+      padding: 20px;
+      text-align: center;
+    }
+    .instagram-feed {
+      margin-top: 24px;
+      border: 1px solid #ece8e1;
+      border-radius: 24px;
+      overflow: hidden;
+      background: #ffffff;
+      padding: 8px;
+    }
+    .instagram-feed iframe {
+      width: 100%;
+      min-height: 520px;
+      border: 0;
+      background: #fff;
+    }
+    .instagram-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+    footer {
+      border-top: 1px solid #ece8e1;
+      padding: 28px 0 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+      }
+      .hero-visual {
+        min-height: 340px;
+      }
+    }
+    @media (max-width: 600px) {
+      .page {
+        padding: 20px 16px;
+      }
+      .button {
+        width: 100%;
+      }
+      .hero-visual {
+        min-height: 280px;
+      }
+      .stats {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Sox Coffee</div>
+      <nav>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="events.html">Events</a>
+        <a href="index.html#contact">Location</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div>
+        <span class="tag">Fresh coffee, cozy vibes</span>
+        <h1>Welcome to Sox Cafe</h1>
+        <p>Discover handcrafted espresso, artisanal pastries, and a warm neighborhood atmosphere that feels like home.</p>
+        <div class="buttons">
+          <a href="menu.html" class="button primary">View Menu</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="overlay">
+        </div>
+      </div>
+    </section>
+
+    <section id="menu">
+      <div class="section-title">
+        <h3>Featured Menu</h3>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h4>Sox Seasonal</h4>
+          <p>Iced Earl Grey base, with mandarin oil, vanilla foam a hint of zest.</p>
+        </div>
+        <div class="card">
+          <h4>Fruit Toast</h4>
+          <p>The perfect winter warmer, served with seasonal preserve and burnt butter.</p>
+        </div>
+        <div class="card">
+          <h4>Avocado Bagel</h4>
+          <p>Toasted bagel topped with creamy avocado, lemon zest, tangy feta, and topped with dukkah.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="specials">
+      <div class="section-title">
+        <h3>What's on bar</h3>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h4>El Diviso</h4>
+          <p>Processing: Anaerobic Washed<br>
+            Country: Colombia <br>
+            Tasting Notes: Turkish Delight, Mandarin, Freeze Dried Blackberries </p>
+        </div>
+        <div class="card">
+          <h4>Chury Bro</h4>
+          <p>Processing: Washed and Carbonic Maceration <br>
+            Country: Kenya and Colombia <br>
+            Tasting Notes: Sakura Blossom, Pink Lemonade, Marmalade, Almond Biscotti</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="instagram">
+      <div class="section-title">
+        <div>
+          <h3>Follow Along</h3>
+          <p>Catch the latest coffee drops, cozy moments, and cafe updates from our Instagram.</p>
+        </div>
+      </div>
+      <div class="instagram-feed">
+        <iframe src="https://www.instagram.com/sox__sy/embed" title="Instagram feed"></iframe>
+      </div>
+      <a class="instagram-link" href="https://www.instagram.com/sox__sy/" target="_blank" rel="noopener noreferrer">Open Instagram profile</a>
+    </section>
+
+    <section id="contact">
+      <div class="section-title">
+        <div>
+          <h3>Visit Us</h3>
+          <p>Open 7 days a week! Stop by for a comfy seat, friendly service, and the best coffee in the south.</p>
+        </div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h4>Address</h4>
+          <p>1c Murphy Street, South Yarra 3141</p>
+        </div>
+        <div class="card">
+          <h4>Hours</h4>
+          <p>Mon–Fri: 7am–3pm<br>Sat: 8am–3pm<br>Sun: 8am–2pm</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Sox Coffee <br>
+        Always was, always will be, on the land of the Wurundjeri people</span>
+      <span>crafted for cozy mornings &amp; afternoon breaks xx <br>
+        all art credited to Kobe Crew @xxx.instagram.com
+      </span>
+    </footer>
+  </div>
+</body>
+</html>
+```

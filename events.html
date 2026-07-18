@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sox Cafe Events</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #ffffff;
+      --surface: #faf9f7;
+      --accent: #ec793c;
+      --text: #111111;
+      --muted: #666666;
+      --radius: 24px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 20px;
+    }
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .hero {
+      display: grid;
+      gap: 24px;
+      padding: 36px 0 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      margin: 0 0 12px;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.7;
+    }
+    .event-list {
+      display: grid;
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .event {
+      background: #ffffff;
+      border: 1px solid #ece8e1;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 16px 32px rgba(0,0,0,.06);
+    }
+    .event h2 {
+      margin: 0 0 14px;
+      font-size: 1.5rem;
+    }
+    .event p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+    .event-image {
+      width: 100%;
+      max-width: 720px;
+      display: block;
+      margin: 20px auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.08);
+    }
+    .event strong {
+      color: var(--text);
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+    .event .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-weight: 600;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.9rem;
+      margin-top: 20px;
+      min-width: 160px;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 28px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer {
+      border-top: 1px solid #ece8e1;
+      padding: 28px 0 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    @media (max-width: 720px) {
+      .page {
+        padding: 20px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Sox Coffee</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <h1>Events at Sox Cafe</h1>
+      <p>Discover upcoming evenings of poetry, discussion, and immersive gameplay at our community cafe.</p>
+    </section>
+    <div class="event-list">
+      <section class="event">
+        <h2>Poetry Night</h2>
+        <strong>Every Second Thursday from 7pm</strong>
+        <img src="Poetry night.jpg" alt="Poetry Night" class="event-image" />
+        <p>Join local poets and spoken-word artists for a relaxed night of original work and performance. Bring a poem to share or simply soak in the atmosphere with a warm drink.</p>
+        <a class="button" href="poetry.html">More Information</a>
+      </section>
+      <section class="event">
+        <h2>Book Club</h2>
+        <strong>First Tuesday of the month</strong>
+        <p>Gather with fellow readers to discuss a featured title over coffee. Each month we pick a new book, share ideas, and enjoy a cozy conversation.</p>
+        <a class="button" href="book-club.html">More Information</a>
+      </section>
+      <section class="event">
+        <h2>Blood on the Clocktower</h2>
+        <strong>Last Sunday of the month</strong>
+        <p>Experience dramatic social deduction in our live game event. Join a table, take on a character role, and help uncover the truth in this thrilling community game night.</p>
+        <a class="button" href="blood-on-the-clocktower.html">More Information</a>
+      </section>
+    </div>
+    <a class="back-link" href="index.html">← Back to Home</a>
+    <footer>
+      <span>© 2026 Sox Coffee</span>
+      <span>crafted for cozy mornings &amp; afternoon breaks</span>
+    </footer>
+  </div>
+</body>
+</html>

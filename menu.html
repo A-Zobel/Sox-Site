@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sox Cafe Menu</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #ffffff;
+      --surface: #faf9f7;
+      --accent: #ec793c;
+      --text: #111111;
+      --muted: #666666;
+      --radius: 24px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      min-height: 100vh;
+    }
+    .page {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 32px 24px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding-bottom: 20px;
+    }
+    .brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      margin-left: 22px;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: var(--text);
+    }
+    .hero {
+      display: grid;
+      gap: 24px;
+      padding: 36px 0 20px;
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 3.5rem);
+      margin: 0 0 12px;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.7;
+    }
+    .menu-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+      margin-top: 36px;
+    }
+    .menu-card {
+      background: #ffffff;
+      border: 1px solid #ece8e1;
+      border-radius: 28px;
+      padding: 24px;
+      box-shadow: 0 14px 32px rgba(0,0,0,.06);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+    }
+    .menu-card h2 {
+      margin: 0;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+    .menu-image {
+      width: 100%;
+      max-width: 520px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+    .menu-card p {
+      margin: 0;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 16px;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer {
+      border-top: 1px solid #ece8e1;
+      padding: 28px 0 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    @media (max-width: 720px) {
+      .page {
+        padding: 20px 16px;
+      }
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Sox Coffee</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="events.html">Events</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <section class="hero">
+      <h1>Food and Drink Menu</h1>
+      <p>Browse the full food and drink menus below.</p>
+    </section>
+    <div class="menu-grid">
+      <article class="menu-card">
+        <h2>Food Menu</h2>
+        <img src="Food Menu.png" alt="Food Menu" class="menu-image" />
+        <p>All available dishes are shown in the food menu. Scroll or view the full image to explore every option.</p>
+      </article>
+      <article class="menu-card">
+        <h2>Drink Menu</h2>
+        <img src="Drink Menu.png" alt="Drink Menu" class="menu-image" />
+        <p>Enjoy our coffee, tea, and specialty drinks. The drink menu is presented with clear spacing and centred visuals.</p>
+      </article>
+    </div>
+    <footer>
+      <span>© 2026 Sox Coffee</span>
+      <a class="back-link" href="index.html">← Back to Home</a>
+    </footer>
+  </div>
+</body>
+</html>
