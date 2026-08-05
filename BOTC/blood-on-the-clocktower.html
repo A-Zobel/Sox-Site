@@ -23,6 +23,8 @@
     .brand { font-size: 1.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; }
     .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .top-actions a { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 0.95rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+    .top-actions a.signup-button { background: #8b0000; border-color: #8b0000; color: #fff; }
+    .top-actions a.signup-button:hover { background: #b30000; border-color: #b30000; }
     .top-actions a:hover { background: rgba(210, 84, 38, 0.18); border-color: rgba(210, 84, 38, 0.4); }
     .hero { padding: 10px 0 18px; }
     .hero h1 { margin: 0 0 14px; font-size: clamp(2.8rem, 6vw, 4.4rem); letter-spacing: -0.04em; line-height: 1.02; }
@@ -35,6 +37,7 @@
     .feature-list { display: grid; gap: 14px; margin-top: 18px; }
     .feature-item { background: rgba(255,255,255,0.06); border-radius: 16px; padding: 18px; color: var(--muted); }
     .feature-item strong { display: block; margin-bottom: 8px; color: #fff; }
+    .title-banner { width: 100%; max-width: 640px; display: block; margin: 0 auto 18px; border-radius: 18px; }
     .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; color: var(--accent); text-decoration: none; font-weight: 600; }
     footer { margin-top: 56px; text-align: center; color: #756f69; font-size: 0.95rem; }
     @media (max-width: 720px) { .page { padding: 32px 18px; } }
@@ -46,7 +49,7 @@
       <header>
         <div class="brand">Blood on the Clocktower</div>
         <nav class="top-actions" aria-label="Quick links">
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1q6TwY8wVYLanuy0iy5Ttclq0bJl85MlLiaXuVjYP9PpJuw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Sign Up</a>
+          <a class="signup-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf1q6TwY8wVYLanuy0iy5Ttclq0bJl85MlLiaXuVjYP9PpJuw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Sign Up</a>
           <a href="https://docs.google.com/document/d/1Rq1hxXCn9vGvdEp7s3dTYKYys69c1Qtu9QV55FNuE7I/edit?tab=t.0#heading=h.5zbzdagprwgl" target="_blank" rel="noopener noreferrer">Code of Conduct</a>
           <a href="resources.html">Resources</a>
         </nav>
@@ -57,6 +60,8 @@
       </section>
       <div class="info-grid">
         <article class="panel">
+          <img src="Title.png" alt="Blood on the Clocktower" class="title-banner" />
+          <br>
           <strong>Last Sunday of the month</strong>
           <h2>Game format</h2>
           <p>Blood on the Clocktower is a social deduction event where players take on hidden roles and work to uncover the truth. The energy is intense, imaginative, and always collaborative.</p>
@@ -64,7 +69,7 @@
         <article class="panel">
           <h2>What to expect</h2>
           <div class="feature-list">
-            <div class="feature-item"><strong>Roleplay</strong> Each player receives a secret character with special abilities.</div>
+            <div class="feature-item"><strong>Differentiation</strong> Each player receives a secret character with special abilities. For more info on what scripts we are playing look in resources</div>
             <div class="feature-item"><strong>Story</strong> A living narrative unfolds as the community votes, debates, and reveals clues. Different scripts can lead to unique stories and priorities</div>
             <div class="feature-item"><strong>Atmosphere</strong> A dramatic night with twists, turns, and unexpected revelations.</div>
           </div>
@@ -75,7 +80,7 @@
         </article>
       </div>
       <a class="back-link" href="events.html">← Back to Events</a>
-      <footer>© 2026 Blood on the Soxktower</footer>
+      <footer>© 2026 Blood on the Soxtower</footer>
     </div>
   </div>
 </body>

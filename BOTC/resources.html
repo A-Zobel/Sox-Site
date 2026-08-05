@@ -18,7 +18,7 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: radial-gradient(circle at top, #1f1b1a 0%, #080608 55%, #070504 100%);
+      background: var(--bg);
       color: var(--text);
     }
     .page { max-width: 960px; margin: 0 auto; padding: 24px 24px 40px; }
@@ -26,7 +26,13 @@
     .brand { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; }
     .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
     .top-actions a { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+    .top-actions a.signup-button { background: #8b0000; border-color: #6e0000; color: #fff; }
+    .top-actions a.signup-button:hover { background: #a40000; border-color: #8b0000; }
     .top-actions a:hover { background: rgba(210, 84, 38, 0.18); border-color: rgba(210, 84, 38, 0.4); }
+    .side-illustration1 { position: absolute; left: calc(-200px ); top: 33%; width: 160px; max-width: 16vw; transform: rotate(-15deg); opacity: 0.9; pointer-events: none; z-index: 1; }
+    .side-illustration2 { position: absolute; right: calc(-200px ); top: 20%; width: 160px; max-width: 16vw; transform: rotate(-15deg); opacity: 0.9; pointer-events: none; z-index: 1; }
+    .side-illustration3 { position: absolute; right: calc(-200px ); top: 40%; width: 160px; max-width: 16vw; transform: rotate(15deg); opacity: 0.9; pointer-events: none; z-index: 1; }
+    .page { position: relative; z-index: 2; }
     .hero { padding: 10px 0 20px; }
     .hero h1 { margin: 0 0 10px; font-size: clamp(2.2rem, 4.6vw, 3rem); line-height: 1.05; }
     .hero p { margin: 0; color: var(--muted); line-height: 1.8; max-width: 720px; }
@@ -35,17 +41,24 @@
     .resource-section p, .resource-section li { color: var(--muted); line-height: 1.8; }
     .resource-section ul { margin: 10px 0 0 18px; padding: 0; }
     .resource-section li { margin-bottom: 8px; }
+    .how-to-play { margin-top: 28px; padding: 18px; border-radius: 12px; background: rgba(255,255,255,0.02); }
+    .video-fallback { margin-top: 10px; display: flex; gap: 12px; align-items: center; }
+    .video-fallback img { width: 160px; height: auto; border-radius: 6px; display: block; }
+    .video-fallback a { color: var(--text); text-decoration: none; font-weight: 600; }
     .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; color: var(--accent); text-decoration: none; font-weight: 600; }
     footer { margin-top: 40px; color: #756f69; font-size: 0.95rem; }
-    @media (max-width: 720px) { .page { padding: 18px 16px 32px; } }
+    @media (max-width: 720px) { .page { padding: 18px 16px 32px; } .side-illustration1 { display: none; } body { background: var(--bg); } }
   </style>
 </head>
 <body>
   <div class="page">
+    <img src="Clocktower.png" alt="Clocktower illustration" class="side-illustration1" aria-hidden="true">
+    <img src="Pitchfork.png" alt="Pitchfork illustration" class="side-illustration2" aria-hidden="true">
+    <img src="Jaccuse.png" alt="Jaccuse illustration" class="side-illustration3" aria-hidden="true">
     <header>
       <div class="brand">Blood on the Clocktower</div>
       <nav class="top-actions" aria-label="Quick links">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf1q6TwY8wVYLanuy0iy5Ttclq0bJl85MlLiaXuVjYP9PpJuw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Sign Up</a>
+        <a class="signup-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf1q6TwY8wVYLanuy0iy5Ttclq0bJl85MlLiaXuVjYP9PpJuw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Sign Up</a>
         <a href="https://docs.google.com/document/d/1Rq1hxXCn9vGvdEp7s3dTYKYys69c1Qtu9QV55FNuE7I/edit?tab=t.0#heading=h.5zbzdagprwgl" target="_blank" rel="noopener noreferrer">Code of Conduct</a>
         <a href="blood-on-the-clocktower.html">Home</a>
       </nav>
@@ -62,9 +75,20 @@
       <ul>
         <li>Share notes on pacing, intrigue, or any moments that stood out.</li>
         <li>Tell us what made the night feel welcoming or memorable.</li>
-        <li>For quick feedback, email <a href="mailto:admin@murphyst.com" style="color: #f4f0ec;">admin@murphyst.com</a>.</li>
+        <li>For quick feedback, use the  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe4fcgeyCGceoxvUjnUspTiGIEknt833XZq6TcaC6z97o0zlw/viewform" target="_blank" rel="noopener noreferrer">the Feedback form</a>.</li>
       </ul>
     </section>
+
+    <section class="resource-section">
+      <h2>Scripts</h2>
+      <p>At Sox we play a mixture of official BOTC scripts and custom scenarios, reading ahead can be a real benefit.</p>
+      <ul>
+        <li><a href="Trouble Brewing.html">Trouble Brewing</a>: The default script that is great to start with!</li>
+        <li><a href="Bubble Truing.html">Bubble Truing</a>: A custom script meant to introduce new mechanics and twists.</li>
+        <li><a href="Bad Moon Rising.html">Bad Moon Rising</a>: More advanced; deaths can progress the story for experienced players.</li>
+      </ul>
+    </section>
+
 
     <section class="resource-section">
       <h2>BOTC Rules</h2>
@@ -74,6 +98,7 @@
         <li>Daytime is for discussion, accusations, and voting to eliminate suspects.</li>
         <li>Nighttime is when roles act, secrets deepen, and the story shifts.</li>
         <li>Good play means balancing truth, deception, and reading the room.</li>
+        <li> for more information, visit <a href="https://bloodontheclocktower.com" target="_blank" rel="noopener noreferrer">the official BOTC website</a>.</li>
       </ul>
     </section>
 
@@ -93,12 +118,26 @@
       <ul>
         <li>Keep the atmosphere playful and supportive.</li>
         <li>Respect player boundaries and the pace of the game.</li>
-        <li>Be mindful of spoilers and keep the reveal feeling alive for others.</li>
+        <li>Please abide by the Sox Code of Conduct.</li>
       </ul>
     </section>
 
-    <a class="back-link" href="blood-on-the-clocktower.html">← Back to Event Page</a>
-    <footer>© 2026 Blood on the Clocktower</footer>
+    <section class="resource-section how-to-play">
+      <h2>How to Play</h2>
+      <p class="muted">A quick walkthrough to get started with Blood on the Clocktower.</p>
+      <div class="video-fallback">
+        <a href="https://www.youtube.com/watch?v=M-aZP47Nm9g" target="_blank" rel="noopener noreferrer">
+          <img src="https://img.youtube.com/vi/M-aZP47Nm9g/hqdefault.jpg" alt="How to Play thumbnail">
+        </a>
+        <div>
+          <a href="https://www.youtube.com/watch?v=M-aZP47Nm9g" target="_blank" rel="noopener noreferrer">Watch How to Play on YouTube</a>
+          <div style="color:var(--muted); margin-top:6px;">Open the video on YouTube.</div>
+        </div>
+      </div>
+    </section>
+
+    <a class="back-link" href="blood-on-the-clocktower.html">← Back to Home Page</a>
+    <footer>2026 Blood on the Soxtower</footer>
   </div>
 </body>
 </html>

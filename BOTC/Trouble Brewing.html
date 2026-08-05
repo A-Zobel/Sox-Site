@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sox Script | Blood on the Clocktower</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+    :root {
+      --bg: #190d3d;
+      --panel: rgba(255,255,255,0.08);
+      --accent: #b97bff;
+      --text: #f4f0ec;
+      --muted: #c7b9d6;
+      --radius: 24px;
+      font-family: "Playfair Display", Georgia, serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #4f2b84b9 0%, #190d3dad 45%, #0b0719 100%);
+      color: var(--text);
+    }
+    .page { max-width: 960px; margin: 0 auto; padding: 24px 24px 40px; }
+    header { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-bottom: 12px; }
+    .brand { font-size: 1.4rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #fff; }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .top-actions a { display: inline-flex; align-items: center; justify-content: center; padding: 10px 16px; border-radius: 999px; color: var(--text); text-decoration: none; font-size: 0.9rem; letter-spacing: 0.04em; text-transform: uppercase; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.1); }
+    .top-actions a.signup-button { background: #8b0000; border-color: #8b0000; color: #fff; }
+    .top-actions a.signup-button:hover { background: #b30000; border-color: #b30000; }
+    .top-actions a:hover { background: rgba(185,123,255,0.18); border-color: rgba(185,123,255,0.4); }
+    .hero { padding: 10px 0 20px; }
+    .hero h1 { margin: 0 0 10px; font-size: clamp(2.2rem, 4.6vw, 3rem); line-height: 1.05; }
+    .hero p { margin: 0; color: var(--muted); line-height: 1.8; max-width: 720px; }
+    .section { margin-top: 24px; }
+    .section h2 { margin: 0 0 16px; font-size: 1.8rem; color: var(--accent); }
+    .section p, .section li { color: var(--muted); line-height: 1.9; }
+    .section ul { margin: 14px 0 0; padding: 0; }
+    .section-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; list-style: none; padding: 0; margin: 14px 0 0; }
+    .section-list li { position: relative; margin: 0; padding: 16px 14px; border-radius: 16px; background: rgba(255,255,255,0.06); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease; }
+    .section-list li:hover,
+    .section-list li:focus-visible { transform: translateY(-2px); background: rgba(185,123,255,0.18); outline: none; }
+    .section-list li::after { content: attr(data-name); position: absolute; left: 50%; bottom: calc(100% + 10px); transform: translateX(-50%); padding: 6px 10px; border-radius: 12px; background: rgba(164, 11, 235, 0.85); color: #fff; white-space: nowrap; opacity: 0; pointer-events: none; transition: opacity 0.2s ease; font-size: 0.85rem; }
+    .section-list li:hover::after,
+    .section-list li:focus-visible::after { opacity: 1; }
+    @media (hover: none), (pointer: coarse) {
+      .section-list { grid-template-columns: 1fr; }
+      .section-list li::after { position: static; transform: none; margin-top: 10px; width: auto; display: block; opacity: 1; }
+    }
+    .section li { margin-bottom: 10px; }
+    .back-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 32px; color: var(--accent); text-decoration: none; font-weight: 600; }
+    footer { margin-top: 40px; color: #b4a7c7; font-size: 0.95rem; }
+    .section-link { color: inherit; text-decoration: none; }
+    .section-link:hover { color: #e7d0ff; }
+    @media (max-width: 720px) { .page { padding: 18px 16px 32px; } }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">Blood on the Clocktower</div>
+      <nav class="top-actions" aria-label="Quick links">
+        <a class="signup-button" href="https://docs.google.com/forms/d/e/1FAIpQLSf1q6TwY8wVYLanuy0iy5Ttclq0bJl85MlLiaXuVjYP9PpJuw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Sign Up</a>
+        <a href="resources.html">Resources</a>
+        <a href="blood-on-the-clocktower.html">Home</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1>Trouble Brewing</h1>
+      <p>This is the Script for Trouble Brewing, note that * indicates a power that does <bold>not</bold> activate the first night.</p>
+    </section>
+
+    <section class="section">
+      <h2>Townsfolk</h2>
+      <p>Townsfolk are the town's good characters, working together to uncover slay the Demons.</p>
+      </br>
+      <ul class="section-list">
+        <li tabindex="0" data-name="You start knowing that 1 of 2 players is a particular Townsfolk">Washerwoman</li>
+        <li tabindex="0" data-name="You start knowing that 1 of 2 players is a particular Outsider (Or that zero are in play.)">Librarian</li>
+        <li tabindex="0" data-name="You start knowing that 1 of 2 players is a particular Minion">Investigator</li>
+        <li tabindex="0" data-name="You start knowing how many pairs of evil players there are">Chef</li>
+        <li tabindex="0" data-name="Each night, you learn how many of your 2 alive neighbors are evil.">Empath</li>
+        <li tabindex="0" data-name="Each night, choose 2 players: you learn if either is a Demon. There is a good player that registers as a Demon to you.">Fortune Teller</li>
+        <li tabindex="0" data-name="Each night*, you learn which character died by execution today.">Undertaker</li>
+        <li tabindex="0" data-name="Each night*, choose a player (not yourself): they are safe from the Demon tonight.">Monk</li>
+        <li tabindex="0" data-name="If you die at night, you are woken to choose a player: you learn their character.">Ravenskeeper</li>
+        <li tabindex="0" data-name="The 1st time you are nominated, if the nominator is a Townsfolk, they are executed immediately.">Virgin</li>
+        <li tabindex="0" data-name="Once per game, during the day, publicly choose a player: if they are the Demon, they die.">Slayer</li>
+        <li tabindex="0" data-name="You are safe from the Demon.">Soldier</li>
+        <li tabindex="0" data-name="If only 3 players live & no execution occurs, your team wins. If you die at night, another player might die instead.">Mayor</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Outsiders</h2>
+      <p>Outsiders are neutral or less-trusted characters who still win with the town. Their strange abilities can be helpful, but they often create suspicion.</p>
+      </br>
+      <ul class="section-list">
+        <li tabindex="0" data-name="Each night, choose a player (not yourself): tomorrow, you may only vote if they are voting too.">Butler</li>
+        <li tabindex="0" data-name="You do not know you are the Drunk. You think you are a Townsfolk character, but you are not.">Drunk</li>
+        <li tabindex="0" data-name="You might register as evil & as a Minion or Demon, even if dead.">Recluse</li>
+        <li tabindex="0" data-name="If you die by execution, your team loses.">Saint</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Minions</h2>
+      <p>Minions are evil team members who support the Demon. They help deceive the town and manipulate outcomes without winning alone.</p>
+      </br>
+      <ul class="section-list">
+        <li tabindex="0" data-name="Each night, choose a player: they are poisoned tonight and tomorrow day.">Poisoner</li>
+        <li tabindex="0" data-name="Each night, you see the Grimoire. You might register as good & as a Townsfolk or Outsider, even if dead">Spy</li>
+        <li tabindex="0" data-name="If there are 5 or more players alive & the Demon dies, you become the Demon. (Travellers don't count.)">Scarlet Woman</li>
+        <li tabindex="0" data-name="There are extra Outsiders in play. [+2 Outsiders]">Baron</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Demons</h2>
+      <p>Demons are the evil leaders of the game. They drive the dark agenda with powerful effects and must survive to win.</p>
+      </br>
+      <ul class="section-list">
+        <li tabindex="0" data-name="Each night*, choose a player: they die. If you kill yourself this way, a Minion becomes the Imp.">Imp</li>
+      </ul>
+    </section>
+
+    <a class="back-link" href="resources.html">← Back to Resources</a>
+    <footer>2026 Blood on the Soxtower</footer>
+  </div>
+</body>
+</html>
